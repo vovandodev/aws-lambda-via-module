@@ -5,7 +5,7 @@ data "aws_region" "current" {}
 
 # Reference to the Lambda module from tfc
 module "lambda_function" {
-  source  = "app.terraform.io/vvrubl-hashicorp/lambda/aws"
+  source  = "app.terraform.io/public/vvrubl-hashicorp/lambda/aws"
   version = "8.1.0"
 
   function_name = "my-lambda1"
