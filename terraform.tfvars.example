@@ -1,0 +1,44 @@
+# Example Terraform variables file
+# Copy this file to terraform.tfvars and customize the values
+
+# Lambda function configuration
+lambda_function_name = "my-lambda-function"
+lambda_runtime       = "python3.9"
+lambda_handler       = "lambda_function.lambda_handler"
+
+# Source code configuration
+source_path = "./src"
+
+# Environment variables
+environment_variables = {
+  ENVIRONMENT = "dev"
+  LOG_LEVEL   = "INFO"
+}
+
+# IAM configuration
+create_iam_role = true
+iam_role_name   = "lambda-execution-role"
+
+# VPC configuration (set to true if you need VPC access)
+vpc_config_enabled = false
+subnet_ids         = []
+security_group_ids = []
+
+# Performance configuration
+memory_size = 256
+timeout     = 30
+
+# Environment and project settings
+environment  = "dev"
+project_name = "lambda-project"
+
+# CloudWatch logging
+create_log_group   = true
+log_retention_days = 14
+
+# Additional tags
+tags = {
+  Owner       = "your-team"
+  CostCenter  = "engineering"
+  Application = "lambda-function"
+}
