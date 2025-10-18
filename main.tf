@@ -1,13 +1,3 @@
-# Main Terraform configuration for AWS Lambda via private module
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
 # Data source to get current AWS account information
 data "aws_caller_identity" "current" {}
 
@@ -15,7 +5,7 @@ data "aws_region" "current" {}
 
 # Reference to the Lambda module from tfc
 module "lambda_function" {
-  source  = "app.terraformio/vverubl-hashicorp/lambda/aws"
+  source  = "app.terraform.io/vvrubl-hashicorp/lambda/aws"
   version = "8.1.0"
 
   function_name = "my-lambda1"
